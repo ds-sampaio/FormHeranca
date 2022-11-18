@@ -1,0 +1,43 @@
+unit frmBase;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Unit4, Data.DB, Vcl.Grids,
+  Vcl.DBGrids;
+
+type
+  TForm2 = class(TForm)
+    btnSalvar: TButton;
+    btnListar: TButton;
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    procedure btnSalvarClick(Sender: TObject);
+    procedure btnListarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  protected
+     FService: TController;
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.btnListarClick(Sender: TObject);
+begin
+   FService.Listar;
+end;
+
+procedure TForm2.btnSalvarClick(Sender: TObject);
+begin
+  FService.Salvar;
+end;
+
+end.

@@ -4,13 +4,12 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Unit2, Vcl.StdCtrls, Data.DB, Vcl.Grids,
-  Vcl.DBGrids, Unit5, frmBase;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, frmBase, Controller;
 
 type
   TForm3 = class(TForm2)
     procedure FormCreate(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,13 +29,6 @@ begin
   FService := TControllerFilho.Create;
   DataSource1.DataSet := FService.MemTable;
 
-end;
-
-procedure TForm3.FormShow(Sender: TObject);
-begin
-  inherited;
-  FService := TControllerFilho.Create;
-  DataSource1.DataSet := FService.MemTable;
 end;
 
 end.

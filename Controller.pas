@@ -2,7 +2,7 @@ unit Controller;
 
 interface
 
-uses Unit4,Data.DB;
+uses Data.DB, ControllerBase;
 
 type
   TControllerFilho = class(TController)
@@ -34,7 +34,6 @@ begin
   MemTable.FieldDefs.Add('ID',ftInteger,0,False);
   MemTable.CreateDataSet;
   inherited;
-
 end;
 
 procedure TControllerFilho.Salvar;
