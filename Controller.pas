@@ -12,6 +12,7 @@ type
       destructor destroy; override;
       procedure Salvar; override;
       procedure Listar; override;
+      procedure InitializateMD; override;
   end;
 
 implementation
@@ -29,10 +30,17 @@ begin
   inherited;
 end;
 
-procedure TControllerFilho.Listar;
+procedure TControllerFilho.InitializateMD;
 begin
+  inherited;
   MemTable.FieldDefs.Add('ID',ftInteger,0,False);
   MemTable.CreateDataSet;
+end;
+
+procedure TControllerFilho.Listar;
+begin
+//  MemTable.FieldDefs.Add('ID',ftInteger,0,False);
+//  MemTable.CreateDataSet;
   inherited;
 end;
 

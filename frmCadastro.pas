@@ -26,6 +26,9 @@ implementation
 procedure TForm3.FormCreate(Sender: TObject);
 begin
   inherited;
+  {Lembrar que aqui n é declarado a FService, ele é declarodo no form base, porem instanciado aqui
+   no form filho. Lembrando mais uma coisa, o Fervisei apesar se ser declaro no
+   form base, ele não é criado lá, so aqui}
   FService := TControllerFilho.Create;
   DataSource1.DataSet := FService.MemTable;
 

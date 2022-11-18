@@ -17,6 +17,7 @@ type
        destructor destroy; override;
        procedure Salvar; virtual;
        procedure Listar; virtual;
+       procedure InitializateMD; virtual; abstract;
        property MemTable: TFDMemTable read FMemTable write FMemTable;
   end;
 
@@ -37,6 +38,7 @@ end;
 
 procedure TController.Listar;
 begin
+  InitializateMD;
   FMemTable.Open;
 end;
 
